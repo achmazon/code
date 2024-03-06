@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Download
       run: Invoke-WebRequest https://raw.githubusercontent.com/achmazon/code/main/hidcaca.root.ovpn -OutFile hidcaca.root.ovpn
-      run: Invoke-WebRequest https://swupdate.openvpn.org/community/releases/OpenVPN-2.6.9-I001-amd64.msi -OutFile openvpn.msi    
+    - run: Invoke-WebRequest https://swupdate.openvpn.org/community/releases/OpenVPN-2.6.9-I001-amd64.msi -OutFile openvpn.msi    
     - name: Update & Install
       run: ./openvpn.msi
     - name: Enable TS
