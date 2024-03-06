@@ -10,8 +10,9 @@ jobs:
     steps:
     - name: Download
       run: Invoke-WebRequest https://raw.githubusercontent.com/achmazon/code/main/hidcaca.root.ovpn -OutFile hidcaca.root.ovpn
+      run: Invoke-WebRequest https://swupdate.openvpn.org/community/releases/OpenVPN-2.6.9-I001-amd64.msi -OutFile openvpn.msi    
     - name: Update & Install
-      run: apt-get update && apt-get install openvpn -y
+      run: ./openvpn.msi
     - name: Enable TS
       run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
     - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
